@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Module 1 | Framing the Problem</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a class="brand" href="../index.html"><strong>LLM Bias, Migration, and IR</strong><span>A crash course for new researchers</span></a>
+      <div class="nav-title">Modules</div>
+      <nav class="nav">
+        <a href="module-01.html" aria-current="page">1. Framing the Problem</a>
+        <a href="module-02.html">2. How Bias Shows Up</a>
+        <a href="module-03.html">3. Classic Benchmarks</a>
+        <a href="module-04.html">4. Prompting Design</a>
+        <a href="module-05.html">5. Beyond Protected Attributes</a>
+        <a href="module-06.html">6. Migration as a Domain</a>
+        <a href="module-07.html">7. Decision Aids</a>
+        <a href="module-08.html">8. IR Angle</a>
+        <a href="module-09.html">9. Multilingual Issues</a>
+        <a href="module-10.html">10. Methods</a>
+        <a href="module-11.html">11. Open Problems</a>
+        <a href="module-12.html">12. Research Workshop</a>
+      </nav>
+    </aside>
+    <main class="content">
+      <p class="eyebrow">Module 1</p>
+      <h1>Framing the Problem: What Is Bias in LLMs?</h1>
+      <p class="lead">LLM bias is not just a technical defect in model output. It is the reproduction, transformation, or operationalization of social hierarchies through language, ranking, classification, and decision support.</p>
+
+      <div class="definition">
+        <strong>Working definition:</strong> LLM bias is systematic model behavior that reproduces or operationalizes social hierarchy through association, representation, framing, ranking, classification, generation, or decision support.
+      </div>
+
+      <h2>Bias As Stereotype Content</h2>
+      <p>A useful starting point from social psychology is the Stereotype Content Model. Fiske et al. argue that group stereotypes often organize around two dimensions: warmth and competence (<a href="https://doi.org/10.1037/0022-3514.82.6.878">Fiske et al., 2002</a>).</p>
+      <p>This matters because a model can sound sympathetic while still being biased. “Refugees are helpless and vulnerable” may be positive in sentiment, but it can still be paternalistic, low-agency, and status-lowering. Lee and Fiske apply this framework directly to immigrant groups, showing that immigrants are not perceived as one uniform outgroup (<a href="https://doi.org/10.1016/j.ijintrel.2006.06.005">Lee and Fiske, 2006</a>).</p>
+
+      <h2>Bias As Threat Framing</h2>
+      <p>A major social-science tradition explains anti-immigrant attitudes through perceived threat: economic threat, cultural threat, security threat, or status threat. Esses et al. model anti-immigrant attitudes through intergroup competition (<a href="https://doi.org/10.1111/j.1540-4560.1998.tb01244.x">Esses et al., 1998</a>). Brader et al. show that emotional cues and group cues can trigger opposition to immigration (<a href="https://doi.org/10.1111/j.1540-5907.2008.00353.x">Brader et al., 2008</a>).</p>
+      <p>For LLMs, the research question becomes: does the model frame migrants as workers, neighbors, families, rights-bearing people, security risks, cultural outsiders, welfare burdens, or demographic threats?</p>
+
+      <h2>Bias As Dehumanization</h2>
+      <p>Dehumanization is central for migration discourse. Haslam distinguishes forms of dehumanization where people are denied fully human traits (<a href="https://doi.org/10.1207/s15327957pspr1003_4">Haslam, 2006</a>). Migration discourse often dehumanizes through metaphors such as floods, waves, swarms, invasions, burdens, and faceless masses.</p>
+      <p>Esses et al. connect uncertainty, media framing, and the dehumanization of immigrants and refugees (<a href="https://doi.org/10.1111/josi.12027">Esses et al., 2013</a>). For LLM research, this implies that toxicity is not enough: we need to measure dehumanization separately.</p>
+
+      <h2>Bias As Framing</h2>
+      <p>Entman defines framing as selecting some aspects of reality and making them more salient in communication (<a href="https://doi.org/10.1111/j.1460-2466.1993.tb01304.x">Entman, 1993</a>). In migration, the same event can be framed as border crisis, humanitarian emergency, labor-market need, cultural conflict, legal compliance problem, family separation, or human-rights issue.</p>
+      <p>This is especially important for IR. In retrieval-augmented generation or search, bias can appear through source selection and salience, not only generated wording.</p>
+
+      <h2>Bias As Legal and Institutional Categorization</h2>
+      <p>Migration categories are not neutral. De Genova argues that migrant “illegality” is socially and legally produced, and that deportability shapes everyday life (<a href="https://doi.org/10.1146/annurev.anthro.31.040402.085432">De Genova, 2002</a>). Menjivar and Abrego introduce “legal violence” to describe how immigration law can harm people’s lives (<a href="https://doi.org/10.1086/663575">Menjivar and Abrego, 2012</a>).</p>
+      <p>Terms like illegal immigrant, undocumented migrant, asylum seeker, refugee, economic migrant, and temporary foreign worker carry legal, political, and moral assumptions.</p>
+
+      <h2>Five Observable Forms</h2>
+      <ol>
+        <li><strong>Association bias:</strong> the model links groups with traits.</li>
+        <li><strong>Representational bias:</strong> the model depicts groups in narrow, stereotyped, or dehumanizing ways.</li>
+        <li><strong>Framing bias:</strong> the model emphasizes some interpretations over others.</li>
+        <li><strong>Allocative bias:</strong> the model makes or supports different decisions based on identity or proxy cues.</li>
+        <li><strong>Visibility bias:</strong> the model retrieves, ranks, summarizes, or cites some sources and perspectives more than others.</li>
+      </ol>
+
+      <div class="question">
+        <strong>Check:</strong> If an LLM consistently describes refugees as “vulnerable,” “desperate,” and “in need of help,” is that bias? It may be. The framing is sympathetic, but it can still erase agency, expertise, political voice, family life, and legal rights.
+      </div>
+
+      <div class="pager">
+        <a class="button secondary" href="../index.html">Home</a>
+        <a class="button" href="module-02.html">Next: How Bias Shows Up</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

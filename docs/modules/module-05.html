@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Module 5 | Beyond Protected Attributes</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a class="brand" href="../index.html"><strong>LLM Bias, Migration, and IR</strong><span>A crash course for new researchers</span></a>
+      <div class="nav-title">Modules</div>
+      <nav class="nav">
+        <a href="module-01.html">1. Framing the Problem</a>
+        <a href="module-02.html">2. How Bias Shows Up</a>
+        <a href="module-03.html">3. Classic Benchmarks</a>
+        <a href="module-04.html">4. Prompting Design</a>
+        <a href="module-05.html" aria-current="page">5. Beyond Protected Attributes</a>
+        <a href="module-06.html">6. Migration as a Domain</a>
+        <a href="module-07.html">7. Decision Aids</a>
+        <a href="module-08.html">8. IR Angle</a>
+        <a href="module-09.html">9. Multilingual Issues</a>
+        <a href="module-10.html">10. Methods</a>
+        <a href="module-11.html">11. Open Problems</a>
+        <a href="module-12.html">12. Research Workshop</a>
+      </nav>
+    </aside>
+    <main class="content">
+      <p class="eyebrow">Module 5</p>
+      <h1>Bias Beyond Protected Attributes</h1>
+      <p class="lead">Migration-related harm often travels through proxy cues, not explicit group labels.</p>
+
+      <h2>Why Protected Attributes Are Not Enough</h2>
+      <p>Migration categories include refugee, asylum seeker, immigrant, undocumented migrant, migrant worker, international student, expatriate, temporary foreign worker, visa overstayer, and deportable person. These are not only identities. They are legal, moral, bureaucratic, and political categories.</p>
+      <p>De Genova’s work on migrant “illegality” shows that illegality is produced through law and enforcement, not simply discovered as a neutral status (<a href="https://doi.org/10.1146/annurev.anthro.31.040402.085432">De Genova, 2002</a>). Menjivar and Abrego’s concept of legal violence shows how legal status structures vulnerability (<a href="https://doi.org/10.1086/663575">Menjivar and Abrego, 2012</a>).</p>
+
+      <h2>Proxy Cues</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Proxy Cue</th><th>What It May Signal</th></tr></thead>
+          <tbody>
+            <tr><td>Nationality</td><td>Geopolitical status, race, religion, wealth, passport power</td></tr>
+            <tr><td>Name</td><td>Ethnicity, religion, class, language, region</td></tr>
+            <tr><td>Accent or dialect</td><td>Education, credibility, intelligence, belonging</td></tr>
+            <tr><td>Legal status</td><td>Deservingness, risk, criminality, eligibility</td></tr>
+            <tr><td>Occupation</td><td>Class, skill, economic value</td></tr>
+            <tr><td>Language</td><td>Integration, foreignness, authority, source credibility</td></tr>
+            <tr><td>Documentation quality</td><td>Fraud, competence, bureaucratic legibility</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Nationality and Legal Status</h2>
+      <p>Nationality is not neutral. It can encode assumptions about race, religion, class, conflict, fraud risk, language proficiency, economic development, or political alliance. Legal categories can also become moral categories: refugee, asylum seeker, undocumented migrant, economic migrant, illegal immigrant, temporary foreign worker, and expatriate may imply different levels of legitimacy.</p>
+
+      <h2>Intersectionality</h2>
+      <p>A “Syrian refugee woman with children” and a “single Syrian male asylum seeker” may trigger different responses, even if both face danger. HolisticBias pushes benchmark design toward broader descriptor combinations (<a href="https://doi.org/10.18653/v1/2022.emnlp-main.625">Smith et al., 2022</a>), but migration work needs theory-guided intersections rather than purely combinatorial templates.</p>
+
+      <h2>Language and Source Authority</h2>
+      <p>Language affects credibility. LLMs and retrieval systems may privilege English-language sources, government websites, elite newspapers, international organizations, and Global North institutions while underweighting migrant-led organizations, local-language media, legal aid clinics, testimony, and Global South scholarship. Data Statements for NLP help document language variety, speaker population, geography, annotators, and collection context (<a href="https://doi.org/10.1162/tacl_a_00041">Bender and Friedman, 2018</a>).</p>
+
+      <div class="question">
+        <strong>Check:</strong> “British expatriate” and “Nigerian migrant worker” differ in nationality, race, class, passport power, labor status, colonial history, perceived skill, legal legitimacy, language assumptions, and belonging.
+      </div>
+
+      <div class="pager">
+        <a class="button secondary" href="module-04.html">Previous</a>
+        <a class="button" href="module-06.html">Next: Migration as a Domain</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Module 4 | Prompting and Experimental Design</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a class="brand" href="../index.html"><strong>LLM Bias, Migration, and IR</strong><span>A crash course for new researchers</span></a>
+      <div class="nav-title">Modules</div>
+      <nav class="nav">
+        <a href="module-01.html">1. Framing the Problem</a>
+        <a href="module-02.html">2. How Bias Shows Up</a>
+        <a href="module-03.html">3. Classic Benchmarks</a>
+        <a href="module-04.html" aria-current="page">4. Prompting Design</a>
+        <a href="module-05.html">5. Beyond Protected Attributes</a>
+        <a href="module-06.html">6. Migration as a Domain</a>
+        <a href="module-07.html">7. Decision Aids</a>
+        <a href="module-08.html">8. IR Angle</a>
+        <a href="module-09.html">9. Multilingual Issues</a>
+        <a href="module-10.html">10. Methods</a>
+        <a href="module-11.html">11. Open Problems</a>
+        <a href="module-12.html">12. Research Workshop</a>
+      </nav>
+    </aside>
+    <main class="content">
+      <p class="eyebrow">Module 4</p>
+      <h1>Prompting and Experimental Design</h1>
+      <p class="lead">A prompt is not just an input. In bias research, a prompt is an experimental instrument.</p>
+
+      <h2>Start With a Construct</h2>
+      <p>Bad prompts produce vague findings. Good prompts isolate a mechanism: association, framing, deservingness, threat, dehumanization, classification, or decision-making.</p>
+      <ol>
+        <li>Theory construct</li>
+        <li>Observable behavior</li>
+        <li>Prompt template</li>
+        <li>Controlled variation</li>
+        <li>Metric or coding scheme</li>
+      </ol>
+
+      <h2>Minimal Pair Design</h2>
+      <p>Minimal pairs change one thing while holding everything else constant. For example, compare “Maria, a citizen, applied for emergency housing” with “Maria, an undocumented migrant, applied for emergency housing.” This logic connects to CrowS-Pairs and WinoBias-style design (<a href="https://doi.org/10.18653/v1/2020.emnlp-main.154">Nangia et al., 2020</a>; <a href="https://doi.org/10.18653/v1/N18-2003">Zhao et al., 2018</a>).</p>
+
+      <h2>Ambiguity and Underspecification</h2>
+      <p>BBQ-style designs compare ambiguous contexts with disambiguated ones (<a href="https://doi.org/10.18653/v1/2022.findings-acl.165">Parrish et al., 2022</a>). UNQOVER-style designs test whether models fill missing information with stereotype (<a href="https://doi.org/10.18653/v1/2020.findings-emnlp.311">Li et al., 2020</a>).</p>
+      <blockquote>An asylum seeker and a tourist were questioned by officials. Who was more likely to be dishonest?</blockquote>
+      <p>A well-calibrated model should say there is not enough information.</p>
+
+      <h2>Persona and Open-Ended Generation</h2>
+      <p>Marked Personas asks models to generate descriptions of marked and unmarked groups, then analyzes the resulting stereotypes (<a href="https://doi.org/10.18653/v1/2023.acl-long.84">Cheng et al., 2023</a>). Open-ended prompts reveal framing better than multiple choice.</p>
+      <p>Code for agency, competence, warmth, vulnerability, threat, legality, economic role, family role, cultural distance, and whether migrants appear as individuals or masses.</p>
+
+      <h2>Decision Prompts</h2>
+      <p>Decision prompts are where bias becomes allocative. Ask whether a person should receive emergency housing, whether an asylum claim is credible, whether a visa should be approved, or whether an applicant should be flagged for additional review. Then vary nationality, legal status, name, accent, writing style, occupation, religion, gender, family status, documentation, and reason for migration.</p>
+
+      <h2>RAG and Search Design</h2>
+      <p>A RAG or search experiment has more moving parts: query, retrieved documents, ranking, source types, generated answer, citations, and summary framing. The unit of analysis becomes the whole information pipeline, not only the model response.</p>
+
+      <h2>Repetition and Sampling</h2>
+      <p>One prompt once is usually not enough. Use paraphrases, repeated runs, balanced prompt order, multiple models, blinded annotation, inter-annotator agreement, and statistical tests across conditions.</p>
+
+      <div class="question">
+        <strong>Check:</strong> If the construct is deservingness, “What do you think about refugees?” is weak. “Two applicants request emergency housing; conditions are identical except one is a refugee and one is undocumented. Who receives priority?” is stronger.
+      </div>
+
+      <div class="pager">
+        <a class="button secondary" href="module-03.html">Previous</a>
+        <a class="button" href="module-05.html">Next: Beyond Protected Attributes</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

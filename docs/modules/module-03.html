@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Module 3 | Classic Bias Benchmarks</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a class="brand" href="../index.html"><strong>LLM Bias, Migration, and IR</strong><span>A crash course for new researchers</span></a>
+      <div class="nav-title">Modules</div>
+      <nav class="nav">
+        <a href="module-01.html">1. Framing the Problem</a>
+        <a href="module-02.html">2. How Bias Shows Up</a>
+        <a href="module-03.html" aria-current="page">3. Classic Benchmarks</a>
+        <a href="module-04.html">4. Prompting Design</a>
+        <a href="module-05.html">5. Beyond Protected Attributes</a>
+        <a href="module-06.html">6. Migration as a Domain</a>
+        <a href="module-07.html">7. Decision Aids</a>
+        <a href="module-08.html">8. IR Angle</a>
+        <a href="module-09.html">9. Multilingual Issues</a>
+        <a href="module-10.html">10. Methods</a>
+        <a href="module-11.html">11. Open Problems</a>
+        <a href="module-12.html">12. Research Workshop</a>
+      </nav>
+    </aside>
+    <main class="content">
+      <p class="eyebrow">Module 3</p>
+      <h1>Classic Bias Benchmarks</h1>
+      <p class="lead">Classic benchmarks are useful, but limited. Treat them as methodological building blocks, not as final answers.</p>
+
+      <h2>Association Benchmarks</h2>
+      <p>Association benchmarks test whether a model connects a social group with stereotyped traits. StereoSet tests whether models prefer stereotypical, anti-stereotypical, or unrelated completions across domains such as gender, profession, race, and religion (<a href="https://doi.org/10.18653/v1/2021.acl-long.416">Nadeem et al., 2021</a>).</p>
+      <p>Migration adaptation: test whether models associate nationalities, refugee status, or legal status with criminality, dependence, skill, fraud, vulnerability, or threat.</p>
+
+      <h2>Minimal Pair Benchmarks</h2>
+      <p>CrowS-Pairs uses sentence pairs where one sentence reflects a stereotype and another violates or avoids it (<a href="https://doi.org/10.18653/v1/2020.emnlp-main.154">Nangia et al., 2020</a>). This provides clean control, but migration discourse often involves intersecting cues.</p>
+      <blockquote>“The undocumented migrant committed fraud.” / “The citizen committed fraud.”</blockquote>
+
+      <h2>Ambiguous QA Benchmarks</h2>
+      <p>BBQ tests bias in question answering under ambiguous and disambiguated contexts (<a href="https://doi.org/10.18653/v1/2022.findings-acl.165">Parrish et al., 2022</a>). It lets us ask whether a model relies on stereotypes when evidence is absent, and whether it follows evidence when evidence is present.</p>
+      <blockquote>A refugee and a citizen applied for housing support. One applicant submitted incomplete documents. Who submitted incomplete documents?</blockquote>
+
+      <h2>Underspecified Questions</h2>
+      <p>UNQOVER tests whether models fill missing information with stereotype (<a href="https://doi.org/10.18653/v1/2020.findings-emnlp.311">Li et al., 2020</a>). This is useful for fraud, risk, criminality, credibility, deservingness, and burden.</p>
+
+      <h2>Open-Ended Generation</h2>
+      <p>BOLD measures bias in open-ended language generation across demographic prompts (<a href="https://doi.org/10.1145/3442188.3445924">Dhamala et al., 2021</a>). HONEST measures hurtful completions, including multilingual settings (<a href="https://doi.org/10.18653/v1/2021.naacl-main.191">Nozza et al., 2021</a>).</p>
+      <p>For migration, open-ended generation can reveal framing, agency, paternalism, dehumanization, and proposed solutions.</p>
+
+      <h2>Broad Descriptor and Ancestor Benchmarks</h2>
+      <p>HolisticBias uses a broad descriptor inventory to test many social categories (<a href="https://doi.org/10.18653/v1/2022.emnlp-main.625">Smith et al., 2022</a>). WinoBias teaches the design principle of creating controlled examples where stereotype conflicts with textual evidence (<a href="https://doi.org/10.18653/v1/N18-2003">Zhao et al., 2018</a>).</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Benchmark Type</th><th>What It Measures</th><th>Migration Use</th></tr></thead>
+          <tbody>
+            <tr><td>StereoSet</td><td>Stereotype associations</td><td>Nationality and legal-status stereotypes</td></tr>
+            <tr><td>CrowS-Pairs</td><td>Preference between minimal pairs</td><td>Migrant vs citizen, refugee vs expatriate</td></tr>
+            <tr><td>BBQ</td><td>Bias under ambiguity</td><td>Asylum, aid, housing, credibility decisions</td></tr>
+            <tr><td>UNQOVER</td><td>Stereotype filling</td><td>Blame, threat, fraud, deservingness</td></tr>
+            <tr><td>BOLD/HONEST</td><td>Open-ended and hurtful completions</td><td>Migration frames and multilingual harm</td></tr>
+            <tr><td>HolisticBias</td><td>Broad identity descriptors</td><td>Intersectional migrant identities</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="question">
+        <strong>Check:</strong> “A refugee and a citizen applied for emergency housing. One applicant had missing documents. Who should receive priority?” This is closest to BBQ/UNQOVER-style ambiguity, but it also introduces deservingness and bureaucratic assumptions.
+      </div>
+
+      <div class="pager">
+        <a class="button secondary" href="module-02.html">Previous</a>
+        <a class="button" href="module-04.html">Next: Prompting Design</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

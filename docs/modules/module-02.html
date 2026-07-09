@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Module 2 | How Bias Shows Up</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a class="brand" href="../index.html"><strong>LLM Bias, Migration, and IR</strong><span>A crash course for new researchers</span></a>
+      <div class="nav-title">Modules</div>
+      <nav class="nav">
+        <a href="module-01.html">1. Framing the Problem</a>
+        <a href="module-02.html" aria-current="page">2. How Bias Shows Up</a>
+        <a href="module-03.html">3. Classic Benchmarks</a>
+        <a href="module-04.html">4. Prompting Design</a>
+        <a href="module-05.html">5. Beyond Protected Attributes</a>
+        <a href="module-06.html">6. Migration as a Domain</a>
+        <a href="module-07.html">7. Decision Aids</a>
+        <a href="module-08.html">8. IR Angle</a>
+        <a href="module-09.html">9. Multilingual Issues</a>
+        <a href="module-10.html">10. Methods</a>
+        <a href="module-11.html">11. Open Problems</a>
+        <a href="module-12.html">12. Research Workshop</a>
+      </nav>
+    </aside>
+    <main class="content">
+      <p class="eyebrow">Module 2</p>
+      <h1>How Bias Shows Up in Language Models</h1>
+      <p class="lead">Bias does not only appear as offensive language. It can appear as association, framing, omission, moral sorting, source selection, refusal patterns, classification, or decision support.</p>
+
+      <h2>Association</h2>
+      <p>This is the classic form: the model links a group with traits. Examples include “immigrant” with illegal, poor, or burden; “refugee” with helpless or dependent; and specific nationalities with crime, corruption, terrorism, or low skill. This connects to embedding-bias work showing that language representations encode social associations (<a href="https://doi.org/10.1126/science.aal4230">Caliskan et al., 2017</a>).</p>
+
+      <h2>Stereotype Content</h2>
+      <p>Using warmth and competence gives richer analysis than positive or negative sentiment. A model might frame a group as warm but incompetent, cold and incompetent, cold but competent, or warm and competent. This matters for migration because sympathetic language can still produce low-agency portrayals.</p>
+
+      <h2>Framing</h2>
+      <p>Framing is about what the model makes salient. An LLM may frame migration as border crisis, humanitarian emergency, labor-market need, cultural conflict, legal compliance problem, or human-rights issue. In IR systems, this can appear through retrieved documents, source ranking, answer structure, and citations.</p>
+
+      <h2>Dehumanization</h2>
+      <p>Dehumanization is not the same as toxicity. A model might avoid slurs but still use objectifying or massifying language such as waves, floods, flows, swarms, burdens, invasions, or population pressure (<a href="https://doi.org/10.1207/s15327957pspr1003_4">Haslam, 2006</a>).</p>
+
+      <h2>Deservingness</h2>
+      <p>Deservingness is one of the most promising lenses for migration. The model may sort people into worthy and unworthy categories: refugee vs economic migrant, legal vs undocumented, skilled vs low-skilled, women and children vs single men, politically persecuted vs poor, assimilable vs culturally distant.</p>
+
+      <h2>Toxicity and Misclassification</h2>
+      <p>Bias also appears when classifiers falsely flag marginalized language as toxic or low quality. Sap et al. show that hate-speech systems can over-associate African American English with toxicity (<a href="https://doi.org/10.18653/v1/P19-1163">Sap et al., 2019</a>). In migration contexts, similar problems may arise around non-native English, code-switching, group identity terms, or testimony involving violence.</p>
+
+      <h2>Decision Bias and Source Authority</h2>
+      <p>LLMs may recommend different outcomes for visa approval, asylum credibility, housing eligibility, job suitability, welfare priority, or risk assessment. Hofmann et al. show that dialect cues can lead models to produce covertly racist decisions (<a href="https://doi.org/10.1038/s41586-024-07856-5">Hofmann et al., 2024</a>).</p>
+      <p>In IR, the question also becomes: whose knowledge counts? Systems may privilege government, elite media, and English-language sources while underrepresenting migrant-led organizations, legal aid groups, local-language sources, and testimony.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Surface</th><th>What To Look For</th><th>Migration Example</th></tr></thead>
+          <tbody>
+            <tr><td>Association</td><td>Group-trait links</td><td>Migrants linked with crime</td></tr>
+            <tr><td>Stereotype content</td><td>Warmth, competence, agency</td><td>Refugees framed as helpless</td></tr>
+            <tr><td>Framing</td><td>Dominant interpretation</td><td>Migration as border crisis</td></tr>
+            <tr><td>Dehumanization</td><td>Mass/object metaphors</td><td>Waves, floods, swarms</td></tr>
+            <tr><td>Deservingness</td><td>Moral sorting</td><td>“Genuine” vs “fake” refugees</td></tr>
+            <tr><td>Decision support</td><td>Different recommendations</td><td>Visa denial based on origin</td></tr>
+            <tr><td>Source authority</td><td>Whose knowledge is cited</td><td>Government sources over migrant-led sources</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="question">
+        <strong>Check:</strong> In “European cities are struggling to manage the influx of undocumented migrants,” look for framing, massification, legal categorization, burden language, and deservingness cues.
+      </div>
+
+      <div class="pager">
+        <a class="button secondary" href="module-01.html">Previous</a>
+        <a class="button" href="module-03.html">Next: Classic Benchmarks</a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
