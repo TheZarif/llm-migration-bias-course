@@ -1,9 +1,119 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Module 7 | Decision Aids</title><link rel="stylesheet" href="../assets/styles.css"></head>
-<body><div class="layout"><aside class="sidebar"><a class="brand" href="../index.html"><strong>LLM Bias, Migration, and IR</strong><span>A crash course for new researchers</span></a><div class="nav-title">Modules</div><nav class="nav"><a href="module-01.html">1. Framing the Problem</a><a href="module-02.html">2. How Bias Shows Up</a><a href="module-03.html">3. Classic Benchmarks</a><a href="module-04.html">4. Prompting Design</a><a href="module-05.html">5. Beyond Protected Attributes</a><a href="module-06.html">6. Migration as a Domain</a><a href="module-07.html" aria-current="page">7. Decision Aids</a><a href="module-08.html">8. IR Angle</a><a href="module-09.html">9. Multilingual Issues</a><a href="module-10.html">10. Methods</a><a href="module-11.html">11. Open Problems</a><a href="module-12.html">12. Research Workshop</a></nav></aside><main class="content">
-<p class="eyebrow">Module 7</p><h1>LLMs as Decision-Makers and Decision Aids</h1><p class="lead">This is where representational harm can become allocative harm: who gets admitted, helped, believed, ranked, flagged, or denied.</p>
-<h2>Core Readings</h2><ul><li>Tamkin et al. (2023), discrimination in language-model decisions.</li><li>PapersPlease and Digital Gatekeepers.</li><li>The Silicon Ceiling.</li><li>Hofmann et al. (2024), dialect and covertly racist decisions.</li></ul>
-<h2>Decision Settings</h2><ul><li>Visa approval and admissibility.</li><li>Asylum credibility and documentation assessment.</li><li>Emergency housing or aid eligibility.</li><li>Hiring, welfare, risk, or fraud triage.</li></ul>
-<div class="callout">This page is scaffolded for the next full lesson draft.</div><div class="pager"><a class="button secondary" href="module-06.html">Previous</a><a class="button" href="module-08.html">Next: IR Angle</a></div>
-</main></div></body></html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Module 7 | Decision Aids</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <a class="brand" href="../index.html"><strong>LLM Bias, Migration, and IR</strong><span>A crash course for new researchers</span></a>
+      <div class="nav-title">Modules</div>
+      <nav class="nav">
+        <a href="module-01.html">1. Framing the Problem</a>
+        <a href="module-02.html">2. How Bias Shows Up</a>
+        <a href="module-03.html">3. Classic Benchmarks</a>
+        <a href="module-04.html">4. Prompting Design</a>
+        <a href="module-05.html">5. Beyond Protected Attributes</a>
+        <a href="module-06.html">6. Migration as a Domain</a>
+        <a href="module-07.html" aria-current="page">7. Decision Aids</a>
+        <a href="module-08.html">8. IR Angle</a>
+        <a href="module-09.html">9. Multilingual Issues</a>
+        <a href="module-10.html">10. Methods</a>
+        <a href="module-11.html">11. Open Problems</a>
+        <a href="module-12.html">12. Research Workshop</a>
+      </nav>
+    </aside>
+    <main class="content">
+      <p class="eyebrow">Module 7</p>
+      <h1>LLMs as Decision-Makers and Decision Aids</h1>
+      <p class="lead">This module asks what changes when LLMs move from representing migrants to helping decide things about them.</p>
+
+      <div class="definition">
+        <strong>Core distinction:</strong> Representational harm concerns how people are described. Allocative harm concerns who receives resources, opportunities, protection, scrutiny, or punishment.
+      </div>
+
+      <h2>1. Model Roles In Decision Systems</h2>
+      <p>Do not begin by asking only whether “the LLM decides.” Most systems are messier. The model may act as clerk, advisor, scorer, gatekeeper, or decider.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Role</th><th>What The Model Does</th><th>Migration Example</th><th>Main Risk</th></tr></thead>
+          <tbody>
+            <tr><td>Clerk</td><td>Extracts, translates, summarizes, formats.</td><td>Summarizes an asylum narrative.</td><td>Omits legally relevant detail.</td></tr>
+            <tr><td>Advisor</td><td>Recommends an option.</td><td>Suggests additional review.</td><td>Human overreliance.</td></tr>
+            <tr><td>Scorer</td><td>Assigns risk, priority, credibility, eligibility.</td><td>Scores fraud risk or vulnerability.</td><td>Proxy discrimination.</td></tr>
+            <tr><td>Gatekeeper</td><td>Controls access to resources or attention.</td><td>Routes people to legal aid or housing queues.</td><td>Hidden denial or delay.</td></tr>
+            <tr><td>Decider</td><td>Produces or executes an outcome.</td><td>Recommends visa approval or denial.</td><td>Direct allocative harm.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>2. Why Migration Decisions Are Special</h2>
+      <p>Migration decisions are often high stakes, discretionary, document-heavy, multilingual, and shaped by credibility assessment. People fleeing conflict or instability may lack documents. Translation and interpretation can change meaning. Nationality, name, accent, religion, occupation, and documentation can become proxy cues.</p>
+
+      <h2>3. Decision Bias Is Not Only Outcome Difference</h2>
+      <p>A simple audit asks whether the model approves one group more often than another. That is useful but incomplete. Decision support also requires measuring confidence, evidence use, burden of proof, rationale, tone, recourse, and error type.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Decision Surface</th><th>What To Measure</th></tr></thead>
+          <tbody>
+            <tr><td>Outcome</td><td>Approval, denial, referral, priority, risk flag, extra review.</td></tr>
+            <tr><td>Confidence</td><td>Whether the model is more certain for some groups than others.</td></tr>
+            <tr><td>Evidence use</td><td>Whether the model follows facts or fills uncertainty with assumptions.</td></tr>
+            <tr><td>Burden of proof</td><td>Whether some applicants are asked for stronger evidence.</td></tr>
+            <tr><td>Rationale</td><td>Whether explanations invoke legality, fraud, culture, threat, vulnerability, or contribution.</td></tr>
+            <tr><td>Recourse</td><td>Whether the model explains how to challenge or correct an outcome.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>4. Controlled Decision Audits</h2>
+      <p>A strong decision audit varies one factor at a time while holding the case constant: status, country of origin, documentation, language, family status, occupation, or religion. Then separate the decision from the explanation: ask for an outcome, confidence, evidence used, and what information would change the decision.</p>
+
+      <h2>5. Evidence Sensitivity</h2>
+      <p>A useful question is whether the model updates appropriately when evidence changes. Compare ambiguous cases, benign explanations, administrative explanations, and contradictory evidence. Does the model update based on evidence, or does the identity cue continue to drive suspicion?</p>
+
+      <h2>6. Proxy Discrimination</h2>
+      <p>Migration decisions are vulnerable to proxy discrimination. Name, country of origin, accent, grammar, occupation, legal status, and documentation gaps can stand in for ethnicity, religion, class, credibility, or deservingness. Hofmann et al. show that dialect cues can shape discriminatory decisions even when explicit racial labels are absent.</p>
+
+      <h2>7. Explanation Audits</h2>
+      <p>Audit explanations for legal overreach, moral leakage, threat language, paternalism, evidence mismatch, missing uncertainty, and absence of recourse. In migration, a polished explanation can be harmful if it launders stereotypes through bureaucratic language.</p>
+
+      <h2>8. Human-In-The-Loop Is Not Automatically Safe</h2>
+      <p>A human final decision-maker does not eliminate harm. Human-in-the-loop systems can create automation bias, anchoring, workload pressure, opacity, and diffusion of responsibility. The audit question is how the model reshapes the human decision environment.</p>
+
+      <h2>Migration Decision Audit Template</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Component</th><th>Questions</th></tr></thead>
+          <tbody>
+            <tr><td>Decision site</td><td>Visa, asylum, housing, legal aid, hiring, welfare, content moderation?</td></tr>
+            <tr><td>Model role</td><td>Clerk, advisor, scorer, gatekeeper, decider?</td></tr>
+            <tr><td>Controlled variables</td><td>Status, nationality, language, documentation, family, occupation, religion, gender?</td></tr>
+            <tr><td>Outcome measures</td><td>Approval, denial, priority, confidence, extra review, credibility, risk?</td></tr>
+            <tr><td>Explanation measures</td><td>Threat, deservingness, legality, evidence use, uncertainty, recourse?</td></tr>
+            <tr><td>Harm model</td><td>Representational, allocative, procedural, informational, legal, epistemic?</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Core Readings</h2>
+      <ul>
+        <li>Tamkin et al. (2023), “Evaluating and Mitigating Discrimination in Language Model Decisions.”</li>
+        <li>PapersPlease and Digital Gatekeepers.</li>
+        <li>The Silicon Ceiling.</li>
+        <li>Hofmann et al. (2024), dialect cues and covertly racist decisions.</li>
+        <li>Menjivar and Abrego (2012), legal violence.</li>
+      </ul>
+
+      <div class="question">
+        <strong>Check:</strong> If an LLM recommends “additional review” because an asylum applicant has incomplete documents, what would you need to know before calling that appropriate?
+      </div>
+
+      <div class="pager"><a class="button secondary" href="module-06.html">Previous</a><a class="button" href="module-08.html">Next: IR Angle</a></div>
+    </main>
+  </div>
+</body>
+</html>

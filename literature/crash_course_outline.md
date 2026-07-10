@@ -96,6 +96,8 @@ This module maps the migration system itself: migrant categories, actors, instit
 
 ## 7. LLMs as Decision-Makers and Decision Aids
 
+Readable module draft: `literature/modules/module-07-llms-as-decision-aids.md`
+
 Core:
 - Tamkin et al. (2023), "Evaluating and Mitigating Discrimination in Language Model Decisions"
 - PapersPlease
