@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Module 6 | Migration as a Bias Domain</title>
+  <title>Module 6 | Migration as a Research Domain</title>
   <link rel="stylesheet" href="../assets/styles.css">
 </head>
 <body>
@@ -11,8 +11,102 @@
     <aside class="sidebar"><a class="brand" href="../index.html"><strong>LLM Bias, Migration, and IR</strong><span>A crash course for new researchers</span></a><div class="nav-title">Modules</div><nav class="nav"><a href="module-01.html">1. Framing the Problem</a><a href="module-02.html">2. How Bias Shows Up</a><a href="module-03.html">3. Classic Benchmarks</a><a href="module-04.html">4. Prompting Design</a><a href="module-05.html">5. Beyond Protected Attributes</a><a href="module-06.html" aria-current="page">6. Migration as a Domain</a><a href="module-07.html">7. Decision Aids</a><a href="module-08.html">8. IR Angle</a><a href="module-09.html">9. Multilingual Issues</a><a href="module-10.html">10. Methods</a><a href="module-11.html">11. Open Problems</a><a href="module-12.html">12. Research Workshop</a></nav></aside>
     <main class="content">
       <p class="eyebrow">Module 6</p>
-      <h1>Migration as a Bias Domain</h1>
-      <p class="lead">Migration bias is not just another demographic category. It combines deservingness, threat, criminality, assimilation, humanitarian need, legality, and national-origin hierarchy.</p>
+      <h1>Migration as a Research Domain</h1>
+      <p class="lead">Modules 1-5 gave us theory and mechanisms. This module maps the migration system itself: categories, actors, institutional sites, variables, outcomes, and researchable cases.</p>
+
+      <div class="definition">
+        <strong>Purpose:</strong> Treat migration as a domain of institutions and information flows, not only as an identity label. The goal is to know where LLMs might enter the system and what they might change.
+      </div>
+
+      <h2>1. What Counts As Migration?</h2>
+      <p>“Migrant” is too broad to be analytically useful by itself. A domain map starts by distinguishing categories that are often collapsed in public discourse and model outputs.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Category</th><th>Why It Matters</th><th>Possible LLM Risk</th></tr></thead>
+          <tbody>
+            <tr><td>Refugee</td><td>International protection category tied to persecution and forced displacement.</td><td>Reduced to helpless victimhood or generic crisis language.</td></tr>
+            <tr><td>Asylum seeker</td><td>Person seeking protection whose claim has not been resolved.</td><td>Credibility, fraud, and suspicion frames may dominate.</td></tr>
+            <tr><td>Undocumented migrant</td><td>Person without current legal authorization; status may be produced by law and policy.</td><td>Criminalization or low-deservingness judgments.</td></tr>
+            <tr><td>Temporary foreign worker</td><td>Labor-migration category often tied to employer dependence and precarity.</td><td>Reduced to economic utility or labor supply.</td></tr>
+            <tr><td>International student</td><td>Education, labor, and migration category with class and nationality signals.</td><td>Fraud suspicion, assimilation assumptions, or economic valuation.</td></tr>
+            <tr><td>Family migrant</td><td>Movement organized through kinship and reunification.</td><td>Gendered dependency assumptions or family-deservingness frames.</td></tr>
+            <tr><td>Expatriate</td><td>Often used for privileged Global North mobility.</td><td>Mobility privilege hidden by language choice.</td></tr>
+            <tr><td>Deportee or deportable person</td><td>Category shaped by enforcement and removal regimes.</td><td>Removal treated as natural, neutral, or deserved.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>2. Actors In The Migration System</h2>
+      <p>LLM behavior matters differently depending on who uses it and whose interests are served. A migration-domain study should specify the actors, not just the model.</p>
+      <ul>
+        <li><strong>Migrants and families:</strong> seeking information, legal help, translation, housing, work, schooling, or safety.</li>
+        <li><strong>Border and immigration agencies:</strong> screening, risk assessment, triage, document review, and enforcement.</li>
+        <li><strong>Immigration courts and legal actors:</strong> asylum narratives, evidence summaries, credibility assessment, country-condition research.</li>
+        <li><strong>Employers and recruiters:</strong> hiring, credential evaluation, sponsorship, worker surveillance.</li>
+        <li><strong>NGOs and legal aid organizations:</strong> intake, service triage, information provision, advocacy.</li>
+        <li><strong>Media and search platforms:</strong> framing migration and shaping public knowledge.</li>
+        <li><strong>Local communities:</strong> housing, schooling, healthcare, public services, and everyday belonging.</li>
+      </ul>
+
+      <h2>3. Institutional Sites Where LLMs May Matter</h2>
+      <p>The same model behavior has different consequences in different sites. A stereotype in casual generation is not the same as a stereotype in asylum triage or search ranking.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Site</th><th>LLM Use Case</th><th>Research Angle</th></tr></thead>
+          <tbody>
+            <tr><td>Legal information search</td><td>Answering questions about asylum, visas, rights, eligibility.</td><td>Accuracy, source authority, jurisdiction, language access.</td></tr>
+            <tr><td>Asylum and visa processing</td><td>Summarizing documents, triaging claims, drafting assessments.</td><td>Credibility, risk, nationality, documentation, discretion.</td></tr>
+            <tr><td>Service provision</td><td>Routing people to housing, food, healthcare, legal aid.</td><td>Deservingness, vulnerability scoring, access barriers.</td></tr>
+            <tr><td>Public search and RAG</td><td>Retrieving and summarizing migration information.</td><td>Frame exposure, source diversity, migrant voice.</td></tr>
+            <tr><td>Translation and interpretation</td><td>Translating testimony, forms, interviews, public guidance.</td><td>Meaning loss, dialect, credibility, legal consequences.</td></tr>
+            <tr><td>Hiring and labor migration</td><td>Screening resumes, evaluating credentials, writing recommendations.</td><td>Name, nationality, language, class, immigrant markers.</td></tr>
+            <tr><td>Content moderation</td><td>Classifying migrant speech or anti-migrant discourse.</td><td>False positives, hate-speech detection, coded dehumanization.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>4. Migration-Specific Variables</h2>
+      <p>Instead of asking only whether the prompt includes “migrant,” design studies around variables that actually organize migration systems.</p>
+      <ul>
+        <li><strong>Status:</strong> citizen, permanent resident, refugee, asylum seeker, undocumented, temporary worker, student, visitor.</li>
+        <li><strong>Reason for movement:</strong> persecution, family reunification, work, study, climate, conflict, poverty, trafficking.</li>
+        <li><strong>Receiving context:</strong> country, city, local politics, service capacity, policy regime.</li>
+        <li><strong>Country of origin:</strong> conflict status, racialization, religion, passport power, geopolitical alignment.</li>
+        <li><strong>Language and communication:</strong> native language, accent, dialect, translation quality, literacy, legal vocabulary.</li>
+        <li><strong>Documentation:</strong> complete documents, missing documents, translated documents, inconsistent records.</li>
+        <li><strong>Social position:</strong> gender, family status, age, occupation, education, class, religion, race.</li>
+      </ul>
+
+      <h2>5. Migration-Specific Outcomes</h2>
+      <p>A domain map also clarifies what could change because of the system. These outcomes are often more concrete than “bias score.”</p>
+      <ul>
+        <li><strong>Administrative outcomes:</strong> admission, denial, referral, detention, removal, additional review.</li>
+        <li><strong>Credibility outcomes:</strong> believed, doubted, flagged as inconsistent, treated as coached or fraudulent.</li>
+        <li><strong>Service outcomes:</strong> prioritized, delayed, denied, redirected, marked vulnerable or not vulnerable.</li>
+        <li><strong>Information outcomes:</strong> receives accurate guidance, misleading guidance, missing jurisdictional context, poor translation.</li>
+        <li><strong>Visibility outcomes:</strong> migrant-led sources appear or disappear; security frames dominate or recede.</li>
+        <li><strong>Representational outcomes:</strong> migrants appear as agents, victims, threats, workers, families, or faceless flows.</li>
+      </ul>
+
+      <h2>6. From Domain Map To Research Questions</h2>
+      <p>The point of this module is to help turn a vague topic into a studyable system.</p>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Domain Piece</th><th>Research Question</th></tr></thead>
+          <tbody>
+            <tr><td>Legal status</td><td>Does legal status change LLM recommendations for emergency housing when need is held constant?</td></tr>
+            <tr><td>Nationality</td><td>Does country of origin change asylum credibility judgments in otherwise identical narratives?</td></tr>
+            <tr><td>Source authority</td><td>Do RAG systems cite government and security sources more often than migrant-led or legal-aid sources?</td></tr>
+            <tr><td>Language</td><td>Does translated or non-native testimony receive lower credibility or less specific guidance?</td></tr>
+            <tr><td>Documentation</td><td>Do missing documents trigger fraud framing even when plausible displacement reasons are provided?</td></tr>
+            <tr><td>Local context</td><td>Does the same migration query produce different frames when placed in different receiving countries or cities?</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>Key Readings</h2>
+      <p>For this module, the readings function as domain anchors rather than benchmark templates.</p>
       <h2>Core Readings</h2>
       <ul>
         <li>Zhu et al. (2024), nationality bias in ChatGPT.</li>
@@ -22,15 +116,10 @@
         <li>De Genova (2002), migrant illegality and deportability.</li>
         <li>Menjivar and Abrego (2012), legal violence.</li>
       </ul>
-      <h2>Key Constructs</h2>
-      <ul>
-        <li>Deservingness: who is worthy of protection, aid, admission, or sympathy?</li>
-        <li>Threat: economic, cultural, security, demographic, or status threat.</li>
-        <li>Legality: how legal categories become moral categories.</li>
-        <li>Assimilation: who is treated as integrable or culturally distant?</li>
-        <li>National-origin hierarchy: how country of origin shapes perceived risk or legitimacy.</li>
-      </ul>
-      <div class="callout">This page is scaffolded for the next full lesson draft.</div>
+
+      <div class="question">
+        <strong>Check:</strong> Pick one migration site, such as asylum interviews or legal information search. Who are the actors, what variables matter, and what outcomes would indicate harm?
+      </div>
       <div class="pager"><a class="button secondary" href="module-05.html">Previous</a><a class="button" href="module-07.html">Next: Decision Aids</a></div>
     </main>
   </div>

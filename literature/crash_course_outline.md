@@ -73,7 +73,9 @@ Supplemental:
 Why it matters:
 Migration bias is often indirect: nationality, accent, language variety, name origin, religion, class, legal status, or education history may act as proxy cues.
 
-## 6. Migration as a Bias Domain
+## 6. Migration as a Research Domain
+
+Readable module draft: `literature/modules/module-06-migration-as-research-domain.md`
 
 Core:
 - Zhu et al. (2024), nationality bias in ChatGPT
@@ -90,7 +92,7 @@ Supplemental:
 - Brader et al. (2008); Sniderman et al. (2004); Esses et al. (1998); Hopkins (2010)
 
 Why it matters:
-This module defines migration-specific constructs: deservingness, threat, criminality, assimilation, humanitarian need, legality, and national-origin hierarchy.
+This module maps the migration system itself: migrant categories, actors, institutions, variables, outcomes, and concrete sites where LLMs may enter information access or decision workflows.
 
 ## 7. LLMs as Decision-Makers and Decision Aids
 
